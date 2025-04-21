@@ -11,7 +11,11 @@ use std::process;
 
 // Define the Tauri command
 #[tauri::command]
-fn encrypt_message(message: String, key: String, profile_path_str: String) -> Result<String, String> {
+fn encrypt_message(
+    message: String,
+    key: String,
+    profile_path_str: String,
+) -> Result<String, String> {
     let profile_path = Path::new(&profile_path_str);
 
     // Load the encryption profile
@@ -19,7 +23,11 @@ fn encrypt_message(message: String, key: String, profile_path_str: String) -> Re
         Ok(p) => p,
         Err(e) => {
             // Return an error string that can be displayed in the frontend
-            return Err(format!("Error loading profile '{}': {}", profile_path.display(), e));
+            return Err(format!(
+                "Error loading profile '{}': {}",
+                profile_path.display(),
+                e
+            ));
         }
     };
 
