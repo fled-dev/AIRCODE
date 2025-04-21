@@ -38,7 +38,13 @@ impl EncryptionProfile {
                     Err(_) => Err(format!("Invalid integer key provided for Caesar: {}", key).into()),
                 }
             }
-            // Add cases for other encryption types like "vigenere" here later
+            "vigenere" => {
+                if self.key_type != "string" {
+                    return Err("Vigenere cipher requires a string key.".into());
+                }
+                // Key validation (non-empty, alphabetic) happens inside vigenere::encrypt
+                Ok(vigenere::encrypt(message, key))
+            }
             _ => Err(format!("Unsupported encryption type: {}", self.profile_type).into()),
         }
     }

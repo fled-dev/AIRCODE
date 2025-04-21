@@ -5,7 +5,7 @@ mod encryption; // Make the encryption module available
 
 fn main() {
     // Define the path to the profile
-    let profile_path = Path::new("profiles/caesar.json");
+    let profile_path = Path::new("profiles/vigenere.json"); // New path for Vigenere
 
     // Load the encryption profile
     let profile = match encryption::EncryptionProfile::load_from_json(profile_path) {
@@ -19,7 +19,7 @@ fn main() {
     println!("Loaded profile: {:?}", profile);
 
     // Define the message and key for testing
-    let message = "HELLO WORLD";
+    let message = "ATTACKATDAWN"; // New message for Vigenere test
     let key = &profile.example_key; // Use the example key from the profile
 
     println!("Original message: {}", message);

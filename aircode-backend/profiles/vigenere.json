@@ -1,0 +1,8 @@
+{
+  "name": "Vigenère Cipher",
+  "type": "vigenere",
+  "key_required": true,
+  "key_type": "string",
+  "description": "Encrypts text using a repeated keyword to shift each letter.",
+  "example_key": "KEY"
+}
