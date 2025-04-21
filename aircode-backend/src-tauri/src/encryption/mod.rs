@@ -1,7 +1,7 @@
 use serde::{Deserialize, Serialize};
+use std::error::Error;
 use std::fs;
 use std::path::Path;
-use std::error::Error;
 
 pub mod caesar; // Declare caesar module
 pub mod vigenere; // Declare vigenere module (empty for now)
@@ -35,7 +35,9 @@ impl EncryptionProfile {
                 // Attempt to parse the key as an integer
                 match key.parse::<i32>() {
                     Ok(int_key) => Ok(caesar::encrypt(message, int_key)),
-                    Err(_) => Err(format!("Invalid integer key provided for Caesar: {}", key).into()),
+                    Err(_) => {
+                        Err(format!("Invalid integer key provided for Caesar: {}", key).into())
+                    }
                 }
             }
             "vigenere" => {
