@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+  <div id="app">
+    <h1>AIRCODE Encryption</h1>
+    <form id="encrypt-form">
+      <div>
+        <label for="profile">Profile Path:</label>
+        <input type="text" id="profile" name="profile" value="../profiles/caesar.json" readonly>
+        <button type="button" id="switch-profile">Switch to Vigenere</button>
+      </div>
+      <div>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+      </div>
+      <div>
+        <label for="key">Key:</label>
+        <input type="text" id="key" name="key" required>
+      </div>
+      <button type="submit">Encrypt</button>
+    </form>
+    <h2>Result:</h2>
+    <pre id="result"></pre>
+  </div>
+  <script type="module" src="/main.js"></script>
+  </body>
+</html>
