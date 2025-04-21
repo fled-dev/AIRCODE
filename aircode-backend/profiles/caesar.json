@@ -1,0 +1,8 @@
+{
+  "name": "Caesar Cipher",
+  "type": "caesar",
+  "key_required": true,
+  "key_type": "int",
+  "description": "Shifts letters by a fixed amount.",
+  "example_key": "3"
+}
